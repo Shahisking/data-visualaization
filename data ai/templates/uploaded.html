@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Upload File - VisAI</title>
+  <style>
+    body { font-family: Inter, sans-serif; background:#0f172a; color:white; text-align:center; }
+    .upload-box {
+      margin-top:100px;
+      padding:40px;
+      border:2px dashed #38bdf8;
+      border-radius:12px;
+      width:400px;
+      margin-left:auto;
+      margin-right:auto;
+      background:#1e293b;
+    }
+    input[type=file] { margin:20px 0; }
+    button {
+      background:#38bdf8; border:none; padding:10px 20px;
+      border-radius:8px; font-weight:bold; cursor:pointer;
+    }
+    button:hover { background:#0ea5e9; }
+  </style>
+</head>
+<body>
+  <h1>📂 Upload Your Data File</h1>
+  <form action="/upload" method="post" enctype="multipart/form-data" class="upload-box">
+    <input type="file" name="file" accept=".csv,.xlsx" required><br>
+    <button type="submit">Upload & Visualize</button>
+  </form>
+</body>
+</html>

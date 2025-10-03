@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Result - VisAI</title>
+  <style>
+    body { font-family: Inter, sans-serif; background:#0f172a; color:white; padding:20px; }
+    h1 { text-align:center; color:#38bdf8; }
+    .box { background:#1e293b; padding:20px; border-radius:12px; margin:20px auto; max-width:900px; }
+    img { max-width:100%; border-radius:8px; }
+    table { width:100%; border-collapse:collapse; margin-top:20px; }
+    th, td { border:1px solid #334155; padding:8px; text-align:left; }
+    th { background:#334155; }
+    a {
+      display:inline-block; margin-top:20px; padding:10px 16px;
+      background:#38bdf8; color:black; border-radius:8px; text-decoration:none; font-weight:bold;
+    }
+    a:hover { background:#0ea5e9; }
+  </style>
+</head>
+<body>
+  <h1>📊 AI Visualization Result</h1>
+
+  <div class="box">
+    <h2>Generated Chart</h2>
+    <img src="{{ result.chart }}" alt="Visualization">
+  </div>
+
+  <div class="box">
+    <h2>Dataset Preview</h2>
+    <table>
+      <thead>
+        <tr>
+          {% for col in result.columns %}
+          <th>{{ col }}</th>
+          {% endfor %}
+        </tr>
+      </thead>
+      <tbody>
+        {% for row in result.preview %}
+        <tr>
+          {% for col in result.columns %}
+          <td>{{ row[col] }}</td>
+          {% endfor %}
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+
+  <a href="/">⬅ Back to Upload</a>
+</body>
+</html>
